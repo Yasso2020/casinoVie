@@ -1,0 +1,63 @@
+* {
+    box-sizing: border-box;
+    color: white;
+    margin: 0;
+    padding: 0;
+
+}
+
+
+  
+
+body {
+    background-image: url('image222.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 100vh;
+    color: white;
+}
+
+#text{
+    backdrop-filter: blur(10px);
+    width: 1000px;
+    height: 400px;
+    margin-top: 200px;
+    margin-left: 200px;
+    border-radius: 5px;
+    padding-left: 30px;
+    padding-top: 100px;
+    font-family: cursive ;
+    font-style: italic;
+}
+
+
+#tete{
+    color: black;
+    font-family: cursive ;
+    font-style: italic;
+  
+    height: 50px;
+    width: 500px;
+    left: 800px;
+    position: fixed;
+}
+
+li  {
+    
+    display: inline-block;
+    text-align: center;
+    padding: 10px;
+    width: 100px;
+    height: 20px;
+    cursor: pointer;
+
+
+}
+
+a{
+    text-decoration: none;
+    color: beige;
+}
+
+a:hover{
+    text-decoration: underline;
+}

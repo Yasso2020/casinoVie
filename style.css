@@ -1,0 +1,109 @@
+
+* {
+    box-sizing: border-box;
+    color: #Bff;
+    margin: 0;
+    padding: 0;
+
+}
+
+
+  
+
+.fond {
+    background-image: url('image111_edited.jpg');
+    background-repeat: no-repeat;
+    background-repeat: no-repeat;
+    
+    background-size: 100% 100vh;
+}
+.flou
+{
+    background: rgba(255, 255,255, 0.2);
+    backdrop-filter: blur(8px);
+    height: 100vh;
+    width: 50%;
+    animation: changeWidth 8s ease-in-out infinite;
+    border-right: 1px solid whitesmoke;
+    
+}
+.multiple-filtre{
+    backdrop-filter:  blur(20px) saturate(120%) contrast(200%);
+}
+@keyframes changeWidth{
+    0% {width: 0%;}
+    5%{width: 0%;}
+    50%{width: 50%;}
+    80%{width: 50%;}
+    100%{width: 0%;}
+}
+
+h1{
+    font-family: cursive ;
+    font-style: italic;
+    color: white;
+}
+#titre{
+    top: 200px;
+    left: 550px;
+    width: 1000px;
+    height: 10px;
+    position: relative;
+}
+
+.main {
+    position: relative;
+    width: 35%;
+    height: 20%;
+    
+}
+
+.main .shop {
+    position: absolute;
+    top: 550px;
+    left: 550px;
+    font-size: 30px;
+    text-transform: uppercase;
+    font-weight: lighter;
+    color:#fff;
+    border-radius: 30px;
+    background-color: #99849e;
+    padding: 8px 15px;
+    border: 1px solid #b18ea5;
+}
+.main .shop:hover {
+    background-color: #926a84;
+    opacity: 0.8;
+}
+
+#tete{
+    color: black;
+    font-family: cursive ;
+    font-style: italic;
+  
+    height: 50px;
+    width: 500px;
+    left: 800px;
+    position: fixed;
+}
+
+li  {
+    
+    display: inline-block;
+    text-align: center;
+    padding: 10px;
+    width: 100px;
+    height: 20px;
+    cursor: pointer;
+
+
+}
+
+a{
+    text-decoration: none;
+    color: beige;
+}
+
+a:hover{
+    text-decoration: underline;
+}

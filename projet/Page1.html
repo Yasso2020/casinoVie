@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css1.css">
+    <title>Roulette by Me</title>
+</head>
+<body>
+
+    <div class="container">
+        <div id="tete">
+            
+            <nav class="navbar">
+                
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">Help</a></li>
+                <li><a href="../index.html" class="login">Acceuil</a></li>
+            </nav>
+        </div>
+        <main class="main">
+            <button class="shop" ><a href="Page1.html"></a></button>
+        </main>
+    </div>
+    
+   <div id="groupe">
+        <div id="formulaire">
+       
+         
+          <div>
+            <label for="">Votre choix</label>
+            <select name="selection" id="selection" onChange="changeValeur()" >
+                <option value="">Choix</option>
+                <option value="37">Pair</option>
+                <option value="38">Impair</option>
+                <option value="1"> 1</option>
+                <option value="2"> 2</option>
+                <option value="3"> 3</option>
+                <option value="4"> 4</option>
+                <option value="5"> 5</option>
+                <option value="6"> 6</option>
+                <option value="7"> 7</option>
+                <option value="8"> 8</option>
+                <option value="9"> 9</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+                <option value="13">13</option>
+                <option value="14">14</option>
+                <option value="15">15</option>
+                <option value="16">16</option>
+                <option value="17">17</option>
+                <option value="18">18</option>
+                <option value="19">19</option>
+                <option value="20">20</option>
+                <option value="21">21</option>
+                <option value="22">22</option>
+                <option value="23">23</option>
+                <option value="24">24</option>
+                <option value="25">25</option>
+                <option value="26">26</option>
+                <option value="27">27</option>
+                <option value="28">28</option>
+                <option value="29">29</option>
+                <option value="30">30</option>
+                <option value="31">31</option>
+                <option value="32">32</option>
+                <option value="33">33</option>
+                <option value="34">34</option>
+                <option value="35">35</option>
+                <option value="36">36</option>
+        
+            </select>
+          </div>
+
+            <br> <div >
+                <label for="nombre">
+                    Entrez la mise :
+                </label>
+                <input type="number" id="nombre" step="10" min="1" max="100"  >
+            </div>
+        
+            <div class="boutton"> <button id="go" onClick="tirage()">GO</button> </div>
+            <div class="boutton"><input type="button" value="Réinitialisation" onclick="history.go(0)"></div>
+        
+        
+            <br> <div id="monDiv"></div> 
+        
+            <br><div id="fric0"> </div>
+        
+            <br> <div id="somme_restant"></div>
+        
+            <br> <div id="solde_ordinateur"></div>
+
+            <br> <div id="monDiv1"></div>
+       
+            
+        </div>
+        
+    
+        
+        <div id="X">
+            <img src="gif22.gif" alt="" class="gif1">
+            
+        </div>
+
+    </div>
+
+  
+    
+    
+
+
+    
+    <script >
+      
+
+        var div = document.getElementById('monDiv');
+        var div1 = document.getElementById('monDiv1');
+        var div2= document.getElementById('somme_restant');
+        var div3 = document.getElementById('solde_ordinateur');
+        var argent=document.getElementById("nombre"); 
+        var total=document.getElementById('fric0');
+        var choix ;
+        var soldePc=0;
+        var porteMonnaie = 100;
+        var valeurMin = 1;
+        var argent2; 
+
+
+        function changeValeur() {
+            var select = document.getElementById('selection');
+            var choice = select.selectedIndex;
+            var id = select.options[choice].value;
+            var text = select.options[choice].value;
+            
+            window.choix=id;
+        
+        }
+
+        
+       
+       
+
+        function tirage(min, max)
+        {
+            
+            if( porteMonnaie >= argent.value ) 
+            {
+            
+                 min=0;
+                 max=36.
+                var chose = Math.floor(Math.random() * (max-min +1)) + min ; // Valeur trier par l'ordinateur
+                 parseInt(chose);
+             
+                
+                  if( !chose)
+                 {
+                    argent2=0;
+                    div.innerHTML="Vous avez perdu";
+                    total.innerHTML= "Vous avez 0fca";
+                    div1.innerHTML=" ";
+                 }
+                
+                 else
+                {
+                     if( chose==parseInt(window.choix) )
+                     { 
+                        argent2= window.argent.value*35;
+                        div.innerHTML="Vous avez gagné c'est effectivement le nombre choisi  ";
+                        total.innerHTML= "Vous donc gagné: " + argent2 +"FCFA";
+                        div1.innerHTML=" ";
+                           
+                     }
+                
+               
+                    else
+                    {    
+                         if( ( chose %2==0 && parseInt(window.choix)==37 ) )
+                        {
+                            argent2=window.argent.value*2;
+                            div.innerHTML="Vous avez gagné le nombre est effectivement pair";
+                            total.innerHTML= " Vous avez donc gagné: " + argent2 + "FCFA";
+                            div1.innerHTML=" ";
+                        }
+                        else
+                        {  
+                           if(  ( chose %2==1 && parseInt(window.choix)==38 )  )
+                           {
+                                argent2=window.argent.value*2;
+                                div.innerHTML="Vous avez gagné le nombre est effectivement impair";
+                                total.innerHTML= " Vous avez donc gagné: " + argent2 + "FCFA";
+                                div1.innerHTML=" ";
+                           }
+                           else
+                           {
+                            argent2=window.argent.value*0;
+                            div.innerHTML="Vous avez perdu"; 
+                            total.innerHTML=" Vous avez donc gagné: " + argent2 +"FCFA";
+                            div1.innerHTML=" ";
+                           }
+                        }
+                    }    
+             
+                }
+           
+           
+                if(argent2)
+                {
+                    porteMonnaie += argent2;
+                    div2.innerHTML= " Votre solde total est de : " + porteMonnaie + " mille FCFA";
+                
+                    
+                }
+                else
+                {
+                        soldePc = soldePc + parseInt(argent.value);
+                        porteMonnaie-= argent2;
+                        div2.innerHTML= " Votre solde total est de : " + porteMonnaie + " mille FCFA";
+                        div3.innerHTML= " Solde de l'Ordinateur " + soldePc;
+                }
+
+                if(porteMonnaie==0)
+                {
+                        div2.innerHTML="Vous n'avez plus d'argent";
+                      
+                }
+
+            }
+
+            else 
+            {
+                if( porteMonnaie<argent.value) 
+                {
+                     div1.innerHTML=" Votre mise est bien trop grande ";
+                     div2.innerHTML=" ";
+                     div3.innerHTML=" ";
+                     total.innerHTML=" ";
+                     div.innerHTML=" ";
+                }
+                
+                
+            
+            }    
+        }   
+
+       
+
+       
+         
+        
+
+
+         
+
+        
+        
+       
+
+    </script>
+</body>
+</html>
